@@ -69,6 +69,7 @@ public class Deque
         else
         {
             front = new Node(string, null, null);
+            rear = front;
         }
 
 //
@@ -108,11 +109,36 @@ public class Deque
         }
         else
         {
-            Node newRearNode = new Node(string, null, null);
+            // Store current rear
+            //Node originalRear = rear;
 
+            // Create new node to become rear
+            Node newRearNode = new Node(string, null, rear);
+
+            // update current rear.next
             rear.next = newRearNode;
 
+            // update rear
             rear = newRearNode;
+
+//            originalRear.next = newRearNode;
+//
+//            rear = newRearNode;
+////
+//            // Update rear to new node which referenced originalRear
+//            rear = new Node(string, null, originalRear);
+//
+//            // Update the original rears successor node from null to new rear
+//            originalRear.next = rear;
+//
+
+           // Node newRearNode = new Node(string, null, rear);
+
+//
+//
+//            rear.next = newRearNode;
+//
+//            rear = newRearNode;
         }
 
     }
